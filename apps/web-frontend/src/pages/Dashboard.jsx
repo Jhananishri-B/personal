@@ -1,26 +1,26 @@
-import React from 'react'
+import React from "react";
+import Header from "../components/layout/Header";
+import ProgressCard from "../components/dashboard/ProgressCard";
 
-const Dashboard = () => {
+export default function Dashboard() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Dashboard widgets */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold mb-2">Progress</h2>
-          <p className="text-gray-600">Your learning progress</p>
+    <div>
+      <Header />
+      <main className="page dashboard">
+        <h2>Dashboard</h2>
+        <div className="cards">
+          <ProgressCard title="Total XP" value="120" />
+          <ProgressCard title="Courses Completed" value="2" />
+          <ProgressCard title="Quizzes Taken" value="5" />
         </div>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold mb-2">Achievements</h2>
-          <p className="text-gray-600">Your badges and achievements</p>
-        </div>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold mb-2">Recent Activity</h2>
-          <p className="text-gray-600">Your recent learning activity</p>
-        </div>
-      </div>
+        <section>
+          <h3>Recent Quizzes</h3>
+          <ul>
+            <li>Python Basics — 80% — Wrong: Q3</li>
+            <li>Data Structures — 70% — Wrong: Q2, Q7</li>
+          </ul>
+        </section>
+      </main>
     </div>
-  )
+  );
 }
-
-export default Dashboard

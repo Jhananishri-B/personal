@@ -1,15 +1,17 @@
-# Terraform configuration
+# Placeholder Terraform file to illustrate structure
 terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
+  required_version = ">= 1.0"
 }
 
 provider "aws" {
-  region = var.aws_region
+  region = "us-east-1"
 }
 
-# Add your infrastructure resources here
+resource "aws_s3_bucket" "artifacts" {
+  bucket = "learnquest-artifacts-${random_id.rand.hex}"
+  acl    = "private"
+}
+
+resource "random_id" "rand" {
+  byte_length = 4
+}

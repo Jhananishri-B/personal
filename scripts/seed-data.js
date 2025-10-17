@@ -1,8 +1,7 @@
-#!/usr/bin/env node
+// Seed minimal data for development
+const fs = require("fs");
+const path = require("path");
 
-// Seed database with initial data
-console.log('Seeding database...')
-
-// Add seed logic here
-
-console.log('Database seeding completed!')
+const dbFile = path.resolve(__dirname, "../learnquest.db");
+console.log("Seed script placeholder. For this starter, API creates admin user on first run.");
+console.log("To seed courses via API, you can run HTTP requests or extend this script to use sqlite3.");

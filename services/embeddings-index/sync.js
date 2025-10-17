@@ -1,3 +1,2 @@
-// Vector store sync scripts
-// Script to upsert content to vector database
-console.log('Embeddings index service')
+// placeholder script to sync documents to an embeddings index
+console.log("sync.js placeholder - connect to your vector DB and upload embeddings here.");

@@ -1,15 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+:root{
+  --bg:#0b1020;
+  --panel:#0f1724;
+  --accent:#7c3aed;
+  --muted:#94a3b8;
 }
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:linear-gradient(180deg,#061026,#0b1020);color:#e6eef8}
+.page{padding:24px}
+.login-page{display:flex;min-height:100vh;align-items:center;justify-content:center}
+.login-card{background:rgba(255,255,255,0.02);padding:32px;border-radius:12px;width:420px;text-align:center}
+.btn-primary{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;border:0;cursor:pointer}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.05);padding:8px 12px;border-radius:8px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.course-card{background:var(--panel);padding:16px;border-radius:10px}
+.left-rail{width:200px;float:left;padding:12px}
+.avatar{width:48px;height:48px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.quiz-page{max-width:900px;margin:0 auto;padding:20px}
+.code-editor, textarea{width:100%;min-height:200px;padding:12px;border-radius:8px;background:#071022;border:1px solid rgba(255,255,255,0.03);color:#dbeafe}

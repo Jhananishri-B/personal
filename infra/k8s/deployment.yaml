@@ -1,2 +1,22 @@
-# Kubernetes manifests
-# Add your k8s deployment, service, and ingress files here
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learnquest-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: learnquest-api
+  template:
+    metadata:
+      labels:
+        app: learnquest-api
+    spec:
+      containers:
+        - name: api
+          image: learnquest/api:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: NODE_ENV
+              value: "production"

@@ -1,13 +1,18 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.svg";
 
-const Header = () => {
+export default function Header() {
   return (
-    <header className="bg-white shadow-sm">
-      <nav className="container mx-auto px-4 py-4">
-        <h1 className="text-2xl font-bold">LearnQuest</h1>
+    <header className="site-header">
+      <div className="brand">
+        <img src={logo} alt="LearnQuest" width="36" />
+        <Link to="/courses" className="brand-title">LearnQuest</Link>
+      </div>
+      <nav>
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/courses">Courses</Link>
       </nav>
     </header>
-  )
+  );
 }
-
-export default Header

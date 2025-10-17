@@ -1,22 +1,19 @@
-// Main API entry point
-const express = require('express')
-const app = express()
-const PORT = process.env.PORT || 8000
+// Simple Express API that mirrors the FastAPI starter functionality but in Node/Express
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const authRoutes = require("./routes/auth");
+const courseRoutes = require("./routes/courses");
+const quizzes = require("./routes/quizzes"); // we'll create a small quizzes route here
+const app = express();
 
-app.use(express.json())
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Import routes
-// const authRoutes = require('./routes/auth')
-// const courseRoutes = require('./routes/courses')
+app.use("/auth", authRoutes);
+app.use("/courses", courseRoutes);
+app.use("/quizzes", quizzes);
 
-// Use routes
-// app.use('/api/auth', authRoutes)
-// app.use('/api/courses', courseRoutes)
-
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok' })
-})
-
-app.listen(PORT, () => {
-  console.log(`API server running on port ${PORT}`)
-})
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, ()=> console.log(`API listening on ${PORT}`));

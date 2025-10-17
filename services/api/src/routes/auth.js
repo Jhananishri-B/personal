@@ -1,9 +1,11 @@
-// Auth routes
-const express = require('express')
-const router = express.Router()
-const authController = require('../controllers/authController')
+const express = require("express");
+const router = express.Router();
+const { register, token } = require("../controllers/authController");
 
-router.post('/login', authController.login)
-router.post('/register', authController.register)
+// register expects JSON body { name, email, password }
+router.post("/register", register);
 
-module.exports = router
+// token expects form urlencoded { username, password }
+router.post("/token", token);
+
+module.exports = router;

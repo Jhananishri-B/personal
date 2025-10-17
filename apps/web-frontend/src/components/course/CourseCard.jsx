@@ -1,12 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const CourseCard = ({ course }) => {
+export default function CourseCard({ course }) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
-      <p className="text-gray-600">{course.description}</p>
+    <div className="course-card">
+      <h3>{course.title}</h3>
+      <p>{course.description}</p>
+      <div className="card-actions">
+        <Link to={`/courses/${course.id}`} className="btn-primary">Open</Link>
+      </div>
     </div>
-  )
+  );
 }
-
-export default CourseCard

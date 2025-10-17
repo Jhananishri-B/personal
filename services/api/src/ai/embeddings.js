@@ -1,10 +1,7 @@
-// AI/RAG orchestration utilities
-exports.generateEmbeddings = async (content) => {
-  // Generate embeddings logic
-  return []
+// Placeholder for embeddings helper - in production wire up OpenAI or similar
+async function createEmbedding(text) {
+  // This is a stub. Replace with real embeddings API call.
+  return { vector: Array(768).fill(0).map((_,i)=>Math.random()*0.01) };
 }
 
-exports.searchSimilar = async (query) => {
-  // Semantic search logic
-  return []
-}
+module.exports = { createEmbedding };

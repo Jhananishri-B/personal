@@ -1,12 +1,3 @@
-# Python alternative (FastAPI)
-# from fastapi import FastAPI
-# 
-# app = FastAPI()
-# 
-# @app.get("/health")
-# def health_check():
-#     return {"status": "ok"}
-# 
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
+# Placeholder Python file included for compatibility with some tools.
+# The primary API for this monorepo is implemented in Node (src/app.js).
+print("services/api/src/main.py - placeholder. The Node.js Express server runs in app.js")
