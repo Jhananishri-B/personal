@@ -1,0 +1,19 @@
+{
+  "name": "learnquest-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "services/*"
+  ],
+  "scripts": {
+    "start:api": "node services/api/src/app.js",
+    "start:web": "vite --config apps/web-frontend/vite.config.js",
+    "start:admin": "node apps/admin-frontend/src/index.js",
+    "start:worker": "node services/worker/index.js",
+    "migrate": "node scripts/migrate.js",
+    "seed": "node scripts/seed-data.js"
+  },
+  "devDependencies": {
+    "vite": "^7.1.10"
+  }
+}

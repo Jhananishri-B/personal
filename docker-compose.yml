@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  api:
+    build: ./services/api
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./services/api:/usr/src/app
+  web:
+    build: ./apps/web-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/web-frontend:/usr/src/app
+  admin:
+    build: ./apps/admin-frontend
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./apps/admin-frontend:/usr/src/app
+  worker:
+    build: ./services/worker
+    command: node index.js
